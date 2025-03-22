@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\Auth\AuthController;
 
 // Route::get('/user', function (Request $request) {
@@ -15,3 +16,6 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 
 });
+
+//applicants
+Route::apiResource('applicants', ApplicantController::class);
