@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -19,3 +20,6 @@ Route::controller(AuthController::class)->group(function () {
 
 //applicants
 Route::apiResource('applicants', ApplicantController::class);
+
+//categories
+Route::apiResource('categories', CategoryController::class);
