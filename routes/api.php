@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ApplicantController;
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\Auth\AuthController;
 
 // Route::get('/user', function (Request $request) {
@@ -23,3 +24,6 @@ Route::apiResource('applicants', ApplicantController::class);
 
 //categories
 Route::apiResource('categories', CategoryController::class);
+
+//Branch
+Route::apiResource('branches', BranchController::class);

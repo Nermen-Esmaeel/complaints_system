@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Category ;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Resources\Category\CategoryResource;
 use App\Http\Requests\Category\StoreCategoryRequest;
 use App\Http\Requests\Category\UpdateCategoryRequest;
+
 
 
 class CategoryController extends Controller
@@ -42,10 +43,8 @@ class CategoryController extends Controller
      */
     public function show($id): JsonResponse
     {
+       
         $categories = Category::findOrFail($id);
-        if(!$categories){
-            return response()->json(['message' => 'لا يوجد سجل مرتبط بهذا ال id'], 404);
-        }
         return (new CategoryResource($categories))->response();
     }
 
@@ -53,8 +52,9 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, Category $categories): JsonResponse
+    public function update(UpdateCategoryRequest $request, $id): JsonResponse
     {
+        $categories = Category::findOrFail($id);
         $categories->update($request->validated());
         return (new CategoryResource($categories->refresh()))->response();
     }
@@ -63,8 +63,9 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Category $categories): JsonResponse
+    public function destroy($id): JsonResponse
     {
+        $categories = Category::findOrFail($id);
         $categories->delete();
         return response()->json(null, 204);
     }
