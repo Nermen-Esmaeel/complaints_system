@@ -43,7 +43,7 @@ class CategoryController extends Controller
      */
     public function show($id): JsonResponse
     {
-       
+
         $categories = Category::findOrFail($id);
         return (new CategoryResource($categories))->response();
     }
