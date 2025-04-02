@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\RequestTypeController;
+use App\Http\Controllers\RequestStatusController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -31,3 +32,7 @@ Route::apiResource('branches', BranchController::class);
 
 //RequestTypes
 Route::apiResource('requestTypes', RequestTypeController::class);
+
+
+//RequestStatus
+Route::apiResource('requestStatus', RequestStatusController::class);
