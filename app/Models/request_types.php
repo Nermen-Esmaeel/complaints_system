@@ -10,4 +10,9 @@ class request_types extends Model
         'type_name',
         'description',
     ];
+
+    public function requests(): HasMany
+    {
+        return $this->hasMany(Request::class);
+    }
 }

@@ -28,7 +28,7 @@ class RequestStatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(RequestStatusStore $request)
+    public function store(RequestStatusStore $request): JsonResponse
     {
          $request_status = RequestStatus::create($request->validated());
          return (new RequestStatusResource($request_status))->response()->setStatusCode(201);

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\Auth\AuthController;
@@ -40,3 +41,7 @@ Route::apiResource('requestStatus', RequestStatusController::class);
 
 //reports
 Route::apiResource('reports', ReportController::class);
+
+
+//requests
+Route::apiResource('requests', RequestController::class);

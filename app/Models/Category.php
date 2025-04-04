@@ -10,4 +10,11 @@ class Category extends Model
         'category_name',
         'description',
     ];
+
+
+    public function requests(): HasMany
+    {
+        return $this->hasMany(Request::class);
+    }
+
 }

@@ -10,4 +10,9 @@ class RequestStatus extends Model
         'status_name',
         'description',
     ];
+
+    public function requests(): HasMany
+    {
+        return $this->hasMany(Request::class);
+    }
 }
