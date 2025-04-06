@@ -75,4 +75,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(reports::class);
     }
 
+
+
+    public function trackings(): HasMany
+    {
+        return $this->hasMany(Tracking::class, 'updated_by');
+    }
+
 }

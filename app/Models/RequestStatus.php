@@ -15,4 +15,10 @@ class RequestStatus extends Model
     {
         return $this->hasMany(Request::class);
     }
+
+
+    public function trackings(): HasMany
+    {
+        return $this->hasMany(Tracking::class);
+    }
 }

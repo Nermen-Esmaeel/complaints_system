@@ -47,4 +47,11 @@ public function request_status(): BelongsTo
     return $this->belongsTo(RequestStatus::class);
 }
 
+//trackings
+
+public function trackings(): HasMany
+{
+    return $this->hasMany(Tracking::class, 'request_id', 'id');
+}
+
 }
