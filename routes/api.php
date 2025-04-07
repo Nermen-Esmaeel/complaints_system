@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RequestController;
@@ -49,3 +50,6 @@ Route::apiResource('requests', RequestController::class);
 
 //trakings
 Route::apiResource('trakings', TrakingController::class);
+
+//Role
+Route::apiResource('roles', RoleController::class);
