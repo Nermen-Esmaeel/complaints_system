@@ -65,6 +65,9 @@ class RequestTypeController extends Controller
     {
         $request_type = request_types::findOrFail($id);
         $request_type->delete();
-        return response()->json(null, 204);
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $request_type
+        ], 200);
     }
 }

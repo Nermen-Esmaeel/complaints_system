@@ -66,7 +66,13 @@ class CategoryController extends Controller
     public function destroy($id): JsonResponse
     {
         $categories = Category::findOrFail($id);
+        
         $categories->delete();
-        return response()->json(null, 204);
+
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $categories
+        ], 200);
+
     }
 }

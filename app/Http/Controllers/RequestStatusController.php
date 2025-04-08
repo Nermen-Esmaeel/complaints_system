@@ -60,7 +60,11 @@ class RequestStatusController extends Controller
     {
         $request_status = RequestStatus::findOrFail($id);
         $request_status->delete();
-        return response()->json(null, 204);
+        
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $request_status
+        ], 200);
 
     }
 }

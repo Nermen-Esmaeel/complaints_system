@@ -55,6 +55,10 @@ class RequestController extends Controller
     {
         $request = Request::findOrFail($id);
         $request->delete();
-        return response()->json(null, 204);
+        
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $request
+        ], 200);
     }
 }

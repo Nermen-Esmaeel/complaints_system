@@ -59,6 +59,10 @@ class TrakingController extends Controller
     {
         $tracking = Tracking::findOrFail($id);
         $tracking->delete();
-        return response()->json(null, 204);
+
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $tracking
+        ], 200);
     }
 }

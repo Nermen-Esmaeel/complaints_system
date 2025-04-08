@@ -80,6 +80,9 @@ class ReportController extends Controller
     {
         $report = Report::findOrFail($id);
         $report->delete();
-        return response()->json(null, 204);
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $report
+        ], 200);
     }
 }

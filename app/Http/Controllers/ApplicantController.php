@@ -60,7 +60,10 @@ class ApplicantController extends Controller
     public function destroy(Applicant $applicant): JsonResponse
     {
         $applicant->delete();
-        return response()->json(null, 204);
+        return response()->json([
+            'message' => 'deleted successfuly',
+            'deleted_item' => $applicant
+        ], 200);
     }
 
 }
